@@ -10,14 +10,14 @@ class AppBottomBar extends StatefulWidget {
 }
 
 class _AppBottomBarState extends State<AppBottomBar> {
-  List<AppBottomBarItem> barItems = [];
+  // List<AppBottomBarItem> barItems = [];
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
         top: 20,
       ),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
