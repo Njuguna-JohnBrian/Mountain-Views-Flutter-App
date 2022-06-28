@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountains/screens/details_screen.dart';
 import 'package:mountains/screens/home_screen.dart';
 import 'screens/splash_screen.dart';
 
@@ -11,7 +12,7 @@ class MountainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      home: DetailsPage()
     );
   }
 }
