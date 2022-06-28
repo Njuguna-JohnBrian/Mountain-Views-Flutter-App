@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mountains/models/mount_model.dart';
 
+import '../widgets/details_bottom_actions.dart';
+import '../widgets/details_rating_bar.dart';
+
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  MountModel mount;
+  DetailsPage({
+    Key? key,
+    required this.mount,
+  }) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
-    var selectedItem = mountItems[3];
+    var selectedItem = mount;
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -103,7 +111,44 @@ class DetailsPage extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  DetailsRatingBar()
+                  DetailsRatingBar(),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 20,
+                            right: 20,
+                            bottom: 20,
+                          ),
+                          child: Text(
+                            'About ${selectedItem.name}',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 20,
+                            right: 20,
+                            bottom: 20,
+                          ),
+                          child: Text(
+                            '${selectedItem.description}',
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  DetailsBottomActions(),
                 ],
               ),
             )
